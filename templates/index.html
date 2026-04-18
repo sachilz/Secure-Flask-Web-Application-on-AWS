@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Clone</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">NETFLIX</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">TV Shows</a></li>
+            <li><a href="#">Movies</a></li>
+            <li><a href="#">Latest</a></li>
+            <li><a href="#">My List</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Unlimited movies, TV shows, and more.</h1>
+            <p>Watch anywhere. Cancel anytime.</p>
+            <button class="watch-btn">
+                <svg viewBox="0 0 24 24" fill="currentColor" height="24" width="24" style="margin-right: 8px;">
+                    <path d="M8 5v14l11-7z"></path>
+                </svg>
+                Watch Now
+            </button>
+        </div>
+    </header>
+
+    <!-- Movie Rows -->
+    <main>
+        <section class="row">
+            <h2>Trending Now</h2>
+            <div class="movie-container">
+                <img class="movie-card" src="https://picsum.photos/seed/a1/300/170" alt="Movie">
+                <img class="movie-card" src="https://picsum.photos/seed/a2/300/170" alt="Movie">
+                <img class="movie-card" src="https://picsum.photos/seed/a3/300/170" alt="Movie">
+                <img class="movie-card" src="https://picsum.photos/seed/a4/300/170" alt="Movie">
+                <img class="movie-card" src="https://picsum.photos/seed/a5/300/170" alt="Movie">
+                <img class="movie-card" src="https://picsum.photos/seed/a6/300/170" alt="Movie">
+                <img class="movie-card" src="https://picsum.photos/seed/a7/300/170" alt="Movie">
+            </div>
+        </section>
+
+        <section class="row">
+            <h2>Popular on Netflix</h2>
+            <div class="movie-container">
+                <img class="movie-card" src="https://picsum.photos/seed/p1/300/170" alt="Movie">
+                <img class="movie-card" src="https://picsum.photos/seed/p2/300/170" alt="Movie">
+                <img class="movie-card" src="https://picsum.photos/seed/p3/300/170" alt="Movie">
+                <img class="movie-card" src="https://picsum.photos/seed/p4/300/170" alt="Movie">
+                <img class="movie-card" src="https://picsum.photos/seed/p5/300/170" alt="Movie">
+                <img class="movie-card" src="https://picsum.photos/seed/p6/300/170" alt="Movie">
+                <img class="movie-card" src="https://picsum.photos/seed/p7/300/170" alt="Movie">
+            </div>
+        </section>
+
+        <section class="row">
+            <h2>Recommended for You</h2>
+            <div class="movie-container">
+                <img class="movie-card" src="https://picsum.photos/seed/r1/300/170" alt="Movie">
+                <img class="movie-card" src="https://picsum.photos/seed/r2/300/170" alt="Movie">
+                <img class="movie-card" src="https://picsum.photos/seed/r3/300/170" alt="Movie">
+                <img class="movie-card" src="https://picsum.photos/seed/r4/300/170" alt="Movie">
+                <img class="movie-card" src="https://picsum.photos/seed/r5/300/170" alt="Movie">
+                <img class="movie-card" src="https://picsum.photos/seed/r6/300/170" alt="Movie">
+                <img class="movie-card" src="https://picsum.photos/seed/r7/300/170" alt="Movie">
+            </div>
+        </section>
+    </main>
+</body>
+</html>

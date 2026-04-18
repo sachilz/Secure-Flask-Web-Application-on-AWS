@@ -1,0 +1,7 @@
+services:
+  netflix-clone:
+    container_name: netflix-app-container
+    image: netflix-clone-image:latest
+    build: .
+    ports:
+      - "5000:5000"

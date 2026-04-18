@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #141414; /* Netflix black */
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 20px 4%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 10%, rgba(0, 0, 0, 0));
+    z-index: 100;
+}
+
+.logo {
+    color: #E50914; /* Netflix red */
+    font-size: 32px;
+    font-weight: 900;
+    margin-right: 40px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    color: #e5e5e5;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #b3b3b3;
+}
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    background-image: linear-gradient(to top, #141414 0%, rgba(0,0,0,0) 60%), url('https://picsum.photos/seed/netflixhero/1920/1080');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 0 4%;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin-top: 100px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+}
+
+.watch-btn {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 24px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.watch-btn:hover {
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+/* Movie Rows */
+main {
+    padding: 0 4%;
+    margin-top: -80px; /* Overlap hero slightly */
+    position: relative;
+    z-index: 10;
+}
+
+.row {
+    margin-bottom: 40px;
+}
+
+.row h2 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #e5e5e5;
+}
+
+.movie-container {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 20px 0;
+    margin-left: -20px;
+    padding-left: 20px;
+    gap: 15px;
+    scrollbar-width: none; /* Firefox */
+}
+
+.movie-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.movie-card {
+    width: 250px;
+    flex: 0 0 auto;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: scale(1.08); /* Scale up effect */
+    z-index: 5;
+}
