@@ -10,7 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the Docker image...'
-                bat 'docker build -t pyimg .'
+                bat "docker-compose build"
             }
         }
 
@@ -30,7 +30,7 @@ pipeline {
 
         stage('Trivy Scan') {
             steps {
-                bat "\"${TRIVY_PATH}\" image --severity HIGH,CRITICAL pyimg"
+                bat "\"${TRIVY_PATH}\" image --severity HIGH,CRITICAL netflix-clone-image:latest"
             }
         }
 
