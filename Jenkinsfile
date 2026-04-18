@@ -11,6 +11,7 @@ pipeline {
     }
     
     stages {
+
         stage('Build') {
             steps {
                 echo 'Building the Docker image...'
@@ -23,10 +24,10 @@ pipeline {
                 withCredentials([string(credentialsId: 'sonar-token', variable: 'SONAR_TOKEN')]) {
                     bat """
                     \"${SONAR_SCANNER}\" ^
-                    -Dsonar.projectKey=user-management-app ^
+                    -Dsonar.projectKey=flask-app ^
                     -Dsonar.sources=. ^
                     -Dsonar.host.url=http://localhost:9000 ^
-                    -Dsonar.login=%%SONAR_TOKEN%%
+                    -Dsonar.login=%SONAR_TOKEN%
                     """
                 }
             }
@@ -34,24 +35,35 @@ pipeline {
 
         stage('Trivy Scan') {
             steps {
-                bat "\"${TRIVY_PATH}\" image --severity HIGH,CRITICAL netflix-clone-image:latest"
+                bat "\"${TRIVY_PATH}\" image --severity HIGH,CRITICAL %IMAGE%:latest"
             }
         }
 
-         stage('ECR Login') {
+        stage('ECR Login') {
             steps {
-                withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-creds', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
-                bat """
-                aws ecr get-login-password --region %AWS_REGION% | docker login --username AWS --password-stdin %ECR_URL%
-                """
+                withCredentials([aws(
+                    credentialsId: 'aws-creds',
+                    accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                    secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                )]) {
+                    bat """
+                    aws ecr get-login-password --region %AWS_REGION% | docker login --username AWS --password-stdin %ECR_URL%
+                    """
                 }
             }
         }
 
-        stage('Push netflix-clone to ECR') {
+        stage('Tag Image') {
             steps {
                 bat """
-                docker tag netflix-clone-image:latest %ECR_URL%/%IMAGE%:latest
+                docker tag %IMAGE%:latest %ECR_URL%/%IMAGE%:latest
+                """
+            }
+        }
+
+        stage('Push to ECR') {
+            steps {
+                bat """
                 docker push %ECR_URL%/%IMAGE%:latest
                 """
             }
