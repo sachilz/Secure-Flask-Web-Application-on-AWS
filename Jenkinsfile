@@ -4,6 +4,7 @@ pipeline {
     environment {
         AWS_REGION = "us-east-1"
         ECR_URL = "313772261399.dkr.ecr.us-east-1.amazonaws.com"
+        IMAGE = "flask-app"
 
         SONAR_SCANNER = "C:\\DevSecOps\\sonar-scanner\\bin\\sonar-scanner.bat"
         TRIVY_PATH = "C:\\DevSecOps\\trivy\\trivy.exe"
@@ -50,8 +51,8 @@ pipeline {
         stage('Push netflix-clone to ECR') {
             steps {
                 bat """
-                docker tag netflix-clone-image:latest %ECR_URL%/netflix-clone-image:latest
-                docker push %ECR_URL%/netflix-clone-image:latest
+                docker tag netflix-clone-image:latest %ECR_URL%/%IMAGE%:latest
+                docker push %ECR_URL%/%IMAGE%:latest
                 """
             }
         }
