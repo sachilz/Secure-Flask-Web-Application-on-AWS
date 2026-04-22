@@ -30,7 +30,30 @@ The goal of this project is to implement a fully automated CI/CD pipeline with i
 - Jenkins configured
 - SonarQube server setup
 
-### Steps
+## Steps
+### Clone the repository
 ```bash
-git clone https://github.com/your-username/your-repo.git
+git clone https://github.com/sachilz/Secure-Flask-Web-Application-on-AWS.git
 ```
+### Navigate to project
+```bash
+cd Secure-Flask-Web-Application-on-AWS
+```
+### Build Docker image & Container
+```bash
+docker compose up --build -d
+```
+
+## Key Features 🌟
+- Fully automated CI/CD pipeline
+- Integrated security scanning (DevSecOps)
+- Cloud deployment using AWS
+- Containerized application for consistency
+- Production-style workflow implementation
+
+## What I Learned 📚
+- Building end-to-end CI/CD pipelines using Jenkins
+- Integrating security tools into DevOps workflows
+- Containerizing applications using Docker
+- Deploying applications securely on AWS (ECR, EC2, IAM)
+- Understanding real-world DevSecOps practices
