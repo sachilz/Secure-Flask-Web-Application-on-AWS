@@ -1,5 +1,8 @@
 ## Cloud-Native DevSecOps Pipeline: Secure Flask Web Application on AWS 🚀
-
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
 ### Overview 📌
 This project demonstrates a cloud-native DevSecOps pipeline for deploying a secure Flask-based web application using Docker and AWS <br>
 The goal of this project is to implement a fully automated CI/CD pipeline with integrated security checks, ensuring that applications are built, scanned, and deployed securely in a production-like environment
