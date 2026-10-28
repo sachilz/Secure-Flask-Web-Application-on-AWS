@@ -8,7 +8,7 @@ This project demonstrates a cloud-native DevSecOps pipeline for deploying a secu
 The goal of this project is to implement a fully automated CI/CD pipeline with integrated security checks, ensuring that applications are built, scanned, and deployed securely in a production-like environment
 
 ### Architecture 🏗️
-![Diagram](./asset/digrame.gif)
+![Secure Flask DevSecOps Pipeline on AWS](./Secure%20Flask%20DevSecOps%20Pipeline%20on%20AWS.png)
 
 ### CI/CD Pipeline Diagram 🔁
 ![CI/CD Diagram](./asset/1776537009981.jpg)
@@ -82,7 +82,8 @@ Secure-Flask-Web-Application-on-AWS/
 ├── docker-compose.yml
 ├── Dockerfile
 ├── Jenkinsfile
-└── README.md
+├── README.md
+└── Secure Flask DevSecOps Pipeline on AWS.png
 ```
 ## Author 👤
 Sachintha Dilshan <br>
